@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+HAZL
+SoftDev
+p00
+2024-10-
+time spent: 
+-->
+
+<head>
+    <link rel="stylesheet" href="../static/homePage.css">
+</head>
+
+<body>
+    <header>
+        <div><h1>HAZL</h1></div>
+        <div><h1>{{ projectName }}</h1></div>
+        <div>
+            <form action="/login">
+                <input type="submit" value="Login">
+            </form>
+            <form action="/logout">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+    </header>
+
+    <div class="mission">
+        <h1>{{ projectName }}'s Mission</h1>
+        <p>{{ description }}</p>
+    </div>
+
+    <div class="containingDiv2">
+        <div>
+            <h1>Create Stories!</h1>
+            <ul>
+            {% for instructions in instructions %}
+               <li>{{ instructions }}</li>
+            {% endfor %}
+            </ul>
+            <form action="/createStories">
+                <input type="submit" value="Create Your Story">
+            </form>
+        </div>
+            
+        <div>
+            <h1>New Stories!</h1>
+            <p>{{ newStoriesDescription }}</p>
+            <form action="/newStories">
+                <input type="submit" value="View All Stories">
+            </form>
+        </div>    
+    </div>
+
+    <div class="editedStories">
+        <h3>Edited Stories</h3>
+        {% if editedStories != null %}
+            {% for story in editedStories %}
+                <h3>{{ story.name }}</h3>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Copyright @2024 HAZL</p>    
+    </footer>
+</body>
+
+</html>

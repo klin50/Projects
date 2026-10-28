@@ -1,0 +1,40 @@
+/*
+HAZL
+SoftDev
+p00
+2024-10-
+time spent: 
+ */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20vw;
+    background-color: lightcoral;
+    color: white;
+}
+
+body {
+
+}
+
+.signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: aliceblue;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: aliceblue;
+}
