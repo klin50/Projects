@@ -1,0 +1,77 @@
+tracyY -- 2024-12-16
+Cards flip with advice displayed on back.
+
+tracyY -- 2024-12-11
+Gacha is done aside from styling, checking points, and storing cards
+
+claireS -- 2024-12-11
+Worked on leaderboard, almost done with points system, and added flashed messages
+
+kevinL -- 2024-12-11
+Updated CSS for collection.html
+
+tracyY -- 2024-12-10
+Added to API.py: generate 10 cats, generate cats by category
+
+tracyY -- 2024-12-19
+Users can now select a difficulty, category, or randomly generate and answer a trivia question. Incorrect answers will result in an insult (via insult api). Main file was reorganized and comments were added.
+
+claireS -- 2024-12-10
+Started implementing the points system, updated gacha and collection with db info
+
+kevinL -- 2024-12-10
+Updated question.html and added leaderboard
+
+kevinL -- 2024-12-10
+Implemented question.html
+
+christopherL -- 2024-12-09
+Worked on question redirection, created correct and incorrect answer pages
+
+claireS -- 2024-12-09
+Worked on points methods and selectPFP methods for database, updated gacha functionality
+
+kevinL -- 2024-12-07
+Updated question and added welcome.html
+
+claireS -- 2024-12-06
+Debugged login, updated cards table methods
+
+tracyY -- 2024-12-05
+Rewrote and reorganized database.py and main file
+
+claireS -- 2024-12-05
+Updated readme with install and launch guide
+
+tracyY -- 2024-12-04
+Finished all functions for APIs in API.py
+
+claireS -- 2024-12-04
+Added login and worked on keys for api
+
+christopherL -- 2024-12-04
+Rendering gacha images for app
+
+kevinL -- 2024-12-04
+Updated css for gacha and collection
+
+tracyY -- 2024-12-03
+Added functions for three APIs.
+
+claireS -- 2024-12-03
+Updated authenticate method, register method, and users table
+
+christopherL -- 2024-12-03
+Added login/logout starting code
+
+tracyY, kevinL -- 2024-12-03
+Updated design doc: explained gacha, added DB tables, changed insults feature, added explanation for penalty system.
+
+claireS -- 2024-12-02
+Added README heading, created DB tables
+
+kevinL -- 2024-11-30
+Created html and added CSS for Login and Register
+
+kevinL -- 2024-11-28
+Created html and added CSS for home

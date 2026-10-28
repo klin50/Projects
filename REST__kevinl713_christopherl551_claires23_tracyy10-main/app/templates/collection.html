@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+  <head>
+    <title> REST TRIVIA [COLLECTION] </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="static/css/style.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-cover bg-fixed bg-gradient-to-r from-blue-400 to-purple-400 w-full">
+    <nav class="p-6 text-indigo-600">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/"><img src={{ url_for('static', filename='bed.png') }} alt="bed" width="150" height="150"></a>
+        <ul class="flex space-x-6 mr-24 justify-center items-center">
+          <li>
+            {% if pfp == "" %}
+            <img class="w-14 h-14 rounded-full" src={{ url_for('static', filename='default.jpg') }} alt="pfp">
+            {% endif %}
+            {% if pfp != "" %}
+            <div class="h-14 w-14 overflow-hidden rounded-full">
+              <img class="object-cover w-full h-full" src="{{pfp}}" alt="newpfp">
+            </div>
+            {% endif %}
+          </li>
+          <li>
+            <p class="2xl text-white font-semibold text-base">{{points}}pts</p>
+          </li>
+          <li>
+            <form action="/logout">
+              <input type="submit" class="hover:underline transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-lg p-3 text-white font-semibold text-base cursor-pointer" value="Logout">
+            </form>
+          </li>
+      </div>
+    </nav>
+    {% if empty %}
+    <div class="flex justify-center h-screen">
+      <div class="w-5/6 h-5/6 bg-white bg-opacity-90 shadow-lg rounded-lg border-4 flex flex-col justify-between p-8">
+        <div class="text-center">
+          <h1 class="text-2xl font-semibold">My Collection</h1>
+          <h1 class="text-6xl p-4">WOMP WOMP</h1>
+        </div>
+        <div class="flex justify-center items-center flex-grow">
+          <h2 class="text-3xl">Barren wasteland out here</h2>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if not empty %}
+    <div class="flex container mx-auto w-full items-center justify-center">
+      <div class="w-full bg-white bg-opacity-90 shadow-lg rounded-lg border-4 mt-8">
+        <p class="text-4xl font-semibold text-center pt-10">My Collection</p>
+        <h1 class="text-1xl text-center pt-5">Select a card to set it as your profile</h1>
+        <form action="/profile" method="POST">
+          <div class="grid grid-cols-5 gap-4 items-center p-4">
+            {% for card in collection %}
+            <label class="w-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg overflow-hidden items-center justify-center flex p-2">
+              <input type="radio" name="profile" value="{{card[0]}}" class="hidden peer">
+              <div class="flip-card bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center justify-center peer-checked:ring-4 peer-checked:ring-yellow-500">
+                <div class="flip-card-inner">
+                    <img src={{card[0]}} alt="cat" class="flip-card-front w-full object-cover">
+                    <div class="flip-card-back p-4 flex justify-center items-center border-double border-8 border-neutral-100">
+                        <p class="absolute mt-2 text-center text-lg font-semibold">{{card[1]}}</p>
+                        <img src={{card[0]}} alt="cat" class="absolute opacity-20 flip-card-front w-full object-cover">
+                    </div>
+                </div>
+              </div>
+            </label>
+            {% endfor %}
+          </div>
+          <div class="flex justify-end p-4">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Set Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+
+</html>
